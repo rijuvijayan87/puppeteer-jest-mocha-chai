@@ -1,17 +1,12 @@
-version: 2.1
-orbs:
-  node: circleci/node@1.1.6
+version: 2
 jobs:
-  build-and-test:
-    executor:
-      name: node/default
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:12.4.0
+
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: cd puppeteer-percy-jest && npm install
-            - run: cd puppeteer-percy-jest && npm run test:math
-workflows:
-  build-and-test:
-    jobs:
-      - build-and-test
+
+      - run: cd puppeteer-percy-jest && npm install
+      - run: cd puppeteer-percy-jest && npm run test:math
