@@ -9,7 +9,8 @@
     "test:e2e": "./node_modules/mocha/bin/mocha --timeout=30000 ./tests/e2e/payment.test.js",
     "test:snapshots": "jest --config=jest.config.js -i './tests-snapshots/__tests__/visual.test.js' --detectOpenHandles --forceExit",
     "test:snapshots-update": "jest --config=jest.config.js --updateSnapshot --detectOpenHandles --forceExit",
-    "test:percy": "percy exec -- jest -i './tests-snapshots/__tests__/percy.test.js'"
+    "test:percy": "percy exec -- jest -i './tests-snapshots/__tests__/percy.test.js'",
+    "test:math": "jest -i './tests-snapshots/__tests__/math.test.js'"
   },
   "author": "",
   "license": "ISC",
