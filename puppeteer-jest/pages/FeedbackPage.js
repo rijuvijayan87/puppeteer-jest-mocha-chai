@@ -6,17 +6,17 @@ export default class FeedbackPage extends BasePage {
   }
 
   async isFeedbackformDisplayed() {
-    await this.checkElementExists(page, '#name');
-    await this.checkElementExists(page, '#email');
-    await this.checkElementExists(page, '#subject');
-    await this.checkElementExists(page, '#comment');
+    await this.checkElementExists('#name');
+    await this.checkElementExists('#email');
+    await this.checkElementExists('#subject');
+    await this.checkElementExists('#comment');
   }
 
   async submitFeedback(name, email, subject, comment) {
-    await this.keyInTextIntoElement(page, '#name', name);
-    await this.keyInTextIntoElement(page, '#email', email);
-    await this.keyInTextIntoElement(page, '#subject', subject);
-    await this.keyInTextIntoElement(page, '#comment', comment);
-    await this.clickOnElement(page, 'input[type="submit"]');
+    await this.keyInTextIntoElement('#name', name);
+    await this.keyInTextIntoElement('#email', email);
+    await this.keyInTextIntoElement('#subject', subject);
+    await this.keyInTextIntoElement('#comment', comment);
+    await this.clickOnElement('input[type="submit"]');
   }
 }

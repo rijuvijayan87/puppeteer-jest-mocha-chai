@@ -11,7 +11,7 @@ export default class BasePage {
     return await page.url();
   }
 
-  async clickOnElement(page, selector) {
+  async clickOnElement(selector) {
     try {
       await page.waitForSelector(selector);
       await page.click(selector);
@@ -20,7 +20,7 @@ export default class BasePage {
     }
   }
 
-  async keyInTextIntoElement(page, selector, value) {
+  async keyInTextIntoElement(selector, value) {
     try {
       await page.waitForSelector(selector);
       await page.type(selector, value);
@@ -29,7 +29,7 @@ export default class BasePage {
     }
   }
 
-  async retrieveTextFromElement(page, selector) {
+  async retrieveTextFromElement(selector) {
     try {
       await page.waitForSelector(selector);
       await page.$eval(selector, element => element.textContent);
@@ -40,7 +40,7 @@ export default class BasePage {
     }
   }
 
-  async waitForTextFromElement(page, selector) {
+  async waitForTextFromElement(selector) {
     try {
       await page.waitForSelector(selector);
       await page.waitForFunction((selector, value) => {
@@ -56,7 +56,7 @@ export default class BasePage {
     }
   }
 
-  async checkElementNotExists(page, selector) {
+  async checkElementNotExists(selector) {
     try {
       await page.waitForSelector(selector, { hidden: true });
     } catch (error) {
@@ -66,7 +66,7 @@ export default class BasePage {
     }
   }
 
-  async checkElementExists(page, selector) {
+  async checkElementExists(selector) {
     try {
       await page.waitForSelector(selector, { hidden: false });
     } catch (error) {
@@ -76,7 +76,7 @@ export default class BasePage {
     }
   }
 
-  async takeScreenShot(page, fileName) {
+  async takeScreenShot(fileName) {
     try {
       await page.screenshot({ path: 'screenshots/' + fileName + '.jpg' });
     } catch (error) {
@@ -84,7 +84,7 @@ export default class BasePage {
     }
   }
 
-  async selectFromDropDown(page, selector, value) {
+  async selectFromDropDown(selector, value) {
     try {
       await page.waitForSelector(selector);
       await page.select(selector, value);

@@ -3,25 +3,25 @@ import BasePage from './BasePage';
 export default class HomePage extends BasePage {
   async visit() {
     await page.goto('http://zero.webappsecurity.com/index.html');
-    await this.checkElementExists(page, '#nav');
+    await this.checkElementExists('#nav');
   }
 
   async isNavBarDisplayed() {
-    await this.checkElementExists(page, '#pages-nav');
-    await this.checkElementExists(page, '#homeMenu');
-    await this.checkElementExists(page, '#onlineBankingMenu');
-    await this.checkElementExists(page, '#feedback');
+    await this.checkElementExists('#pages-nav');
+    await this.checkElementExists('#homeMenu');
+    await this.checkElementExists('#onlineBankingMenu');
+    await this.checkElementExists('#feedback');
   }
 
   async clickHomePageLink() {
-    await this.clickOnElement(page, '#homeMenu');
+    await this.clickOnElement('#homeMenu');
   }
 
   async clickOnlineBankingLink() {
-    await this.clickOnElement(page, '#onlineBankingMenu');
+    await this.clickOnElement('#onlineBankingMenu');
   }
 
   async clickFeedbackLink() {
-    await this.clickOnElement(page, '#feedback');
+    await this.clickOnElement('#feedback');
   }
 }
