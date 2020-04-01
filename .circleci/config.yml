@@ -10,4 +10,4 @@ jobs:
       - run: ls -lt puppeteer-jest
       - run: cd puppeteer-jest && npm run test
       - store_test_results:
-          path: test-results
+          path: puppeteer-jest/test-results
