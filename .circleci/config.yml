@@ -8,5 +8,5 @@ jobs:
     steps:
       - checkout
 
-      - run: cd puppeteer-percy-jest && npm install
-      - run: cd puppeteer-percy-jest && npm run test:math
+      - run: cd puppeteer-jest && npm install
+      - run: cd puppeteer-jest && npm run test:math
