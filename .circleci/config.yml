@@ -1,12 +1,11 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/node:12.4.0
-
+       - image: circleci/node:12.4.0
+    orbs:
+      puppeteer: threetreeslight/puppeteer@0.1.2
     steps:
       - checkout
-
-      - run: cd puppeteer-percy-jest && npm install
-      - run: cd puppeteer-percy-jest && npm run test:math
+      - run: cd puppeteer-jest && npm install
+      - run: cd puppeteer-jest && npm run test
