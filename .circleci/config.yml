@@ -7,7 +7,7 @@ jobs:
       - image: circleci/node:12.4.0
     steps:
       - checkout
-      - run: cd puppeteer-jest && npm i puppeteer
       - run: cd puppeteer-jest && npm install
+      - run: sudo apt-get update && sudo apt-get install libxtst6
       - run: ls -lt puppeteer-jest
       - run: cd puppeteer-jest && npm run test
