@@ -8,4 +8,5 @@ jobs:
     steps:
       - checkout
       - run: cd puppeteer-jest && npm install
+      - run: ls -lt puppeteer-jest
       - run: cd puppeteer-jest && npm run test
