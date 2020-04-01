@@ -5,8 +5,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.4.0
-    working_directory: puppeteer-jest
     steps:
       - checkout
-      - run: npm install
-      - run: npm run test
+      - run: cd puppeteer-jest && npm install
+      - run: cd puppeteer-jest && npm run test
