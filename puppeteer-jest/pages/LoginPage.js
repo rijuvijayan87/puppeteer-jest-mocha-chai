@@ -2,15 +2,15 @@ import BasePage from './BasePage';
 
 export default class LoginPage extends BasePage {
   async isLoginFormDisplayed() {
-    await page.click('#signin_button');
-    await page.waitForSelector('#login_form');
-    await page.waitForSelector('#user_login');
-    await page.waitForSelector('#user_password');
+    await this.clickOnElement(page, '#signin_button');
+    await this.checkElementExists(page, '#login_form');
+    await this.checkElementExists(page, '#user_login');
+    await this.checkElementExists(page, '#user_password');
   }
 
   async login(user, password) {
-    await page.type('#user_login', user);
-    await page.type('#user_password', password);
-    await page.click('.btn-primary');
+    await this.keyInTextIntoElement(page, '#user_login', user);
+    await this.keyInTextIntoElement(page, '#user_password', password);
+    await this.clickOnElement(page, '.btn-primary');
   }
 }
